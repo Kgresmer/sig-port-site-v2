@@ -1,0 +1,18 @@
+
+.footer-container {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    margin: 20px;
+}
+
+div > p {
+    margin-bottom: 2px;
+}
+
+.plain-link {
+    text-decoration: none;
+    color: white;
+}
