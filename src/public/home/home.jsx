@@ -1,11 +1,9 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import axios from 'axios';
 import './home.css';
-import Itinerary from "./itinerary/Itinerary";
 import WhatsIncluded from "./whatsIncluded/whatsIncluded";
 import Overview from "./overview/overview";
 import {withRouter} from "react-router-dom";
-import DatesPricing from "./DatesPricing/datesPricing";
 
 
 function Home(props) {
@@ -42,16 +40,11 @@ function Home(props) {
     if (tabElements) {
       const y = tabElements.scrollHeight - 25;
 
-      if (window.location.hash === '#Itinerary') {
-        switchTab({component: <Itinerary/>, name: 'Itinerary'});
-        window.scrollTo(0, y)
-      } else if (window.location.hash === '#WhatsIncluded') {
+      if (window.location.hash === '#WhatsIncluded') {
         switchTab({component: <WhatsIncluded/>, name: 'WhatsIncluded'});
         window.scrollTo(0, y)
       } else if (window.location.hash === '#Overview') {
         switchTab({component: <Overview/>, name: 'Overview'});
-      } else if (window.location.hash === '#DatesPricing') {
-        switchTab({component: <DatesPricing/>, name: 'DatesPricing'});
         window.scrollTo(0, y)
       }
     }
@@ -98,19 +91,9 @@ function Home(props) {
               <h5>Overview</h5>
             </div>
             <div className="tab-heading"
-                 style={tab.name === 'Itinerary' ? lightGreenBackground : darkGreenBackground}
-                 onClick={() => switchTab({component: <Itinerary/>, name: 'Itinerary'})}>
-              <h5>Itinerary</h5>
-            </div>
-            <div className="tab-heading"
                  style={tab.name === 'WhatsIncluded' ? lightGreenBackground : darkGreenBackground}
                  onClick={() => switchTab({component: <WhatsIncluded/>, name: 'WhatsIncluded'})}>
               <h5>What's Included</h5>
-            </div>
-            <div className="tab-heading last-tab"
-                 style={tab.name === 'DatesPricing' ? lightGreenBackground : darkGreenBackground}
-                 onClick={() => switchTab({component: <DatesPricing/>, name: 'DatesPricing'})}>
-              <h5>Dates & Pricing</h5>
             </div>
             <div className="tab-heading-offset"></div>
           </div>
@@ -129,19 +112,9 @@ function Home(props) {
               <h5>Overview</h5>
             </div>
             <div className="tab-heading"
-                 style={tab.name === 'Itinerary' ? lightGreenBackground : darkGreenBackground}
-                 onClick={() => switchTab({component: <Itinerary/>, name: 'Itinerary'})}>
-              <h5>Itinerary</h5>
-            </div>
-            <div className="tab-heading"
                  style={tab.name === 'WhatsIncluded' ? lightGreenBackground : darkGreenBackground}
                  onClick={() => switchTab({component: <WhatsIncluded/>, name: 'WhatsIncluded'})}>
               <h5>What's Included</h5>
-            </div>
-            <div className="tab-heading"
-                 style={tab.name === 'DatesPricing' ? lightGreenBackground : darkGreenBackground}
-                 onClick={() => switchTab({component: <DatesPricing/>, name: 'DatesPricing'})}>
-              <h5>Dates & Pricing</h5>
             </div>
           </div>
           <div className={`${tab.name === 'WhatsIncluded' ? 'tab-content-section-w' : 'tab-content-section'} flex-row background-color-selected`}>
@@ -155,17 +128,11 @@ function Home(props) {
 
   return (
     <div>
-      <section className="hero-section" alt="mountain bike trail switzerland" style={bannerImage} id="home">
-        <div className="image-caption">Unique mountain bike adventures organized by local experts</div>
+      <section className="hero-section" alt="Sigrid's Portfolio website" style={bannerImage} id="home">
+        <div className="image-caption">Sigrid Site</div>
       </section>
       <main className="">
-        <section className="trip-info-section" id="Overview">
-          <div className="flex-row">
-            <div className="overview-tab-banner">
-              <h3>SCUOL SWISS ALPS MOUNTAIN BIKE TRIP</h3>
-            </div>
-          </div>
-          {displayTabSelectors()}
+        <section className="" id="Overview">
         </section>
 
         <section className="">
